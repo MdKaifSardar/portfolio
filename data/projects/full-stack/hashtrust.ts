@@ -35,7 +35,7 @@ export const hashtrustProject: ProjectCaseStudy = {
       },
       {
         label: "API reference",
-        href: "https://hash-trust.vercel.app/api",
+        href: "https://hash-trust.vercel.app/",
         type: "secondary",
         isExternal: true,
       },

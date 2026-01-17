@@ -29,13 +29,13 @@ export const bhorProject: ProjectCaseStudy = {
     links: [
       {
         label: "Explore site",
-        href: "https://example.com/bhor",
+        href: "https://bhor.vercel.app/",
         type: "primary",
         isExternal: true,
       },
       {
         label: "Design file",
-        href: "https://figma.com/file/bhor",
+        href: "https://bhor.vercel.app/",
         type: "secondary",
         isExternal: true,
       },

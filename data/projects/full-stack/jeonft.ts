@@ -29,13 +29,13 @@ export const jeonftProject: ProjectCaseStudy = {
     links: [
       {
         label: "Product walkthrough",
-        href: "https://docs.example.com/jeonft-platform",
+        href: "https://jeonftuser.vercel.app/",
         type: "primary",
         isExternal: true,
       },
       {
         label: "Architecture memo",
-        href: "https://docs.example.com/jeonft-architecture",
+        href: "https://jeonftuser.vercel.app/",
         type: "secondary",
         isExternal: true,
       },

@@ -47,7 +47,7 @@ export const binaryHackathonProject: ProjectCaseStudy = {
       },
       {
         label: "Design mood board",
-        href: "https://figma.com/file/binary-hackathon",
+        href: "https://binary-web-2k26.vercel.app/",
         type: "secondary",
         isExternal: true,
       },
@@ -155,6 +155,6 @@ export const binaryHackathonProject: ProjectCaseStudy = {
       src,
       alt,
       caption: caption ?? "",
-    })
+    }),
   ),
 };

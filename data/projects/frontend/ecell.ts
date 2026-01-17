@@ -29,13 +29,13 @@ export const ecellProject: ProjectCaseStudy = {
     links: [
       {
         label: "Visit site",
-        href: "https://example.com/ecell",
+        href: "https://e-cell-web.vercel.app/",
         type: "primary",
         isExternal: true,
       },
       {
         label: "Prototype",
-        href: "https://figma.com/file/ecell",
+        href: "https://e-cell-web.vercel.app/",
         type: "secondary",
         isExternal: true,
       },

@@ -4,10 +4,10 @@ import { eduTouchImages } from "./edutouch-images";
 export const eduTouchExperience: ExperienceCaseStudy = {
   id: 3,
   slug: "edutouch-learning-platform",
-  role: "Founding Product Engineer",
+  role: "Full Stack Developer - Freelancer",
   company: "EduTouch",
-  location: "Remote • Bengaluru, IN",
-  timeframe: "Jan 2023 – Jun 2024",
+  location: "Remote • Kolkata, IN",
+  timeframe: "Dec 2024 – Feb 2025",
   excerpt:
     "Scaled EduTouch's exam-readiness platform end-to-end—marketing funnel, learning console, secure admin suite, and download-ready study assets—so 18K learners stay guided without ops bottlenecks.",
   summary:
@@ -103,35 +103,29 @@ export const eduTouchExperience: ExperienceCaseStudy = {
   ],
   milestones: [
     {
-      title: "Core LMS pilot",
-      period: "Q1 2023",
+      title: "Kickoff + architecture spike",
+      period: "Dec 2024",
       description:
-        "Prototyped App Router shell, validated Mongo schemas, and shipped the first managed pilot.",
+        "Audited the legacy stack, finalized App Router architecture, and migrated Mongo models + Cloudinary contracts.",
       highlight: true,
     },
     {
-      title: "Marketing + downloads stack",
-      period: "Q2 2023",
+      title: "Marketing + downloads relaunch",
+      period: "Jan 2025",
       description:
-        "Stitched hero carousel, downloads CTA, notice wall, and CTA widgets backed by utility dictionaries.",
+        "Rebuilt the hero carousel, notice wall, downloads CTA, and `/api/*/download` handlers with telemetry + automation hooks.",
     },
     {
-      title: "Automation + admin console",
-      period: "Q3 2023",
+      title: "Admin console + automation",
+      period: "Jan 2025",
       description:
-        "Hardened admin dashboard, EmailJS workflows, and server-driven CRUD for every managed domain.",
+        "Shipped CRUD panels for courses, exams, GK/CA drops, and hero posters backed by EmailJS + server actions.",
     },
     {
-      title: "Analytics + compliance",
-      period: "Q4 2023",
+      title: "Analytics + launch readiness",
+      period: "Feb 2025",
       description:
-        "Delivered admin insights, CSV exports, and `/api/*/download` handlers for regulators.",
-    },
-    {
-      title: "Regional rollout + ops",
-      period: "Q2 2024",
-      description:
-        "Localized copy, data residency, and incident runbooks for three new regions ahead of go-live.",
+        "Delivered insights dashboards, CSV/API exports, and playbooks for regional go-live + CX enablement.",
     },
   ],
   documentation: [
@@ -155,6 +149,13 @@ export const eduTouchExperience: ExperienceCaseStudy = {
         "Environment matrices, `/api/*` dependencies, and downtime comms flows for ops + CX.",
       href: "https://docs.example.com/edutouch-ops",
       format: "Docs",
+    },
+  ],
+  links: [
+    {
+      label: "EduTouch platform",
+      href: "https://www.edutouchinstitute.com/",
+      description: "Marketing funnel, LMS surfaces, and admin entry points.",
     },
   ],
   gallery: eduTouchImages.gallery,

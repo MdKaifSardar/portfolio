@@ -4,12 +4,12 @@ import { stitchMyClothesImages } from "./stitch-images";
 export const stitchMyClothesExperience: ExperienceCaseStudy = {
   id: 4,
   slug: "stitch-my-clothes-platform",
-  role: "Full-stack Product Engineer",
-  company: "Clouth (Stitch My Clothes)",
-  location: "Hybrid • Mumbai, IN",
-  timeframe: "Jul 2022 – Dec 2023",
+  role: "Full-stack Developer - Freelancer",
+  company: "Stitch My Clothes",
+  location: "Remote • Kolkata, IN",
+  timeframe: "Feb 2025 – Jun 2025",
   excerpt:
-    "Launched Clouth's custom apparel stack—from immersive storefront to measurement-first checkout—so shoppers, stylists, and tailors can co-create garments without spreadsheets or ad-hoc chat.",
+    "Launched Stitch My Clothes's custom apparel stack—from immersive storefront to measurement-first checkout—so shoppers, stylists, and tailors can co-create garments without spreadsheets or ad-hoc chat.",
   summary:
     "Led discovery, architecture, and delivery of the App Router commerce experience, layering a modular shirt studio, measurement capture flows, cart intelligence, and dual payments on top of Clerk-secured APIs and MongoDB.",
   card: {
@@ -17,7 +17,7 @@ export const stitchMyClothesExperience: ExperienceCaseStudy = {
   },
   hero: {
     headline:
-      "Digitized bespoke tailoring for Clouth—from inspiration through doorstep delivery",
+      "Digitized bespoke tailoring for Stitch My Clothes—from inspiration through doorstep delivery",
     heroImage: stitchMyClothesImages.hero,
     badges: ["Next.js App Router", "Clerk", "MongoDB", "Cloudinary"],
     stats: [
@@ -107,29 +107,29 @@ export const stitchMyClothesExperience: ExperienceCaseStudy = {
   ],
   milestones: [
     {
-      title: "Blueprint + alpha",
-      period: "Q3 2022",
+      title: "Discovery + concierge alpha",
+      period: "Feb 2025",
       description:
-        "Mapped journeys, stood up Clerk, and launched the concierge alpha for curated fittings.",
+        "Mapped shopper + tailor journeys, validated layered garments, and soft-launched the concierge alpha.",
       highlight: true,
     },
     {
-      title: "Measurement-first launch",
-      period: "Q4 2022",
+      title: "Measurement-first studio",
+      period: "Mar 2025",
       description:
-        "Opened self-serve bookings, layered shirt designer, and gender-specific measurement flows.",
+        "Opened the self-serve customization studio with gender-specific measurements and PDF spec exports.",
     },
     {
       title: "Commerce + payments",
-      period: "Q1 2023",
+      period: "Apr 2025",
       description:
-        "Delivered smart cart, coupon validation, PayPal integration, and COD orchestration.",
+        "Delivered smart carting, coupon validation, PayPal integration, and COD orchestration end-to-end.",
     },
     {
-      title: "Ops + scale",
-      period: "Q3 2023",
+      title: "Ops & retention scale",
+      period: "May – Jun 2025",
       description:
-        "Rolled out cart analytics, courier SLA dashboards, and retention campaigns for repeat orders.",
+        "Rolled out courier SLA dashboards, retention campaigns, and vendor ramp playbooks ahead of full launch.",
     },
   ],
   documentation: [
@@ -153,6 +153,14 @@ export const stitchMyClothesExperience: ExperienceCaseStudy = {
         "SLA policies, courier integrations, and notification templates for CX + ops.",
       href: "https://docs.example.com/clouth-ops",
       format: "Slides",
+    },
+  ],
+  links: [
+    {
+      label: "Stitch My Clothes storefront",
+      href: "https://smc-new-final.vercel.app/",
+      description:
+        "Custom apparel experience with studio, measurements, and checkout.",
     },
   ],
   gallery: stitchMyClothesImages.gallery,

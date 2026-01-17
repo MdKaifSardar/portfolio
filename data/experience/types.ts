@@ -37,6 +37,12 @@ export interface ExperienceDocument {
   format: string;
 }
 
+export interface ExperienceLink {
+  label: string;
+  href: string;
+  description?: string;
+}
+
 export interface ExperienceGalleryItem {
   src: string;
   alt: string;
@@ -67,6 +73,7 @@ export interface ExperienceCaseStudy {
   milestones: ExperienceMilestone[];
   documentation: ExperienceDocument[];
   gallery: ExperienceGalleryItem[];
+  links?: ExperienceLink[];
 }
 
 export interface ExperienceSummary {

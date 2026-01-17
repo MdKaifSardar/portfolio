@@ -7,6 +7,8 @@ interface HeroSectionProps {
 }
 
 const HeroSection = ({ experience }: HeroSectionProps) => {
+  const primaryLink = experience.links?.[0];
+
   return (
     <section className="overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-white/10 via-white/5 to-transparent p-5 shadow-[0_40px_120px_rgba(2,6,23,0.45)] sm:p-7 lg:p-10">
       <div className="flex flex-col gap-6 lg:grid lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] lg:items-start">
@@ -45,6 +47,17 @@ const HeroSection = ({ experience }: HeroSectionProps) => {
             <p className="text-sm text-white/80 sm:text-base">
               {experience.excerpt}
             </p>
+            {primaryLink && (
+              <a
+                href={primaryLink.href}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-white transition hover:border-white/60 hover:bg-white/20"
+              >
+                Visit live experience
+                <span aria-hidden="true">↗</span>
+              </a>
+            )}
           </div>
 
           <div className="lg:max-w-xl">
