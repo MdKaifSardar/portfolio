@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <rect width="800" height="450" fill="#020617" />
+  <rect x="44" y="44" width="712" height="362" rx="20" fill="#0f172a" stroke="#f97316" stroke-width="4" stroke-dasharray="8 8" />
+  <text x="50%" y="50%" text-anchor="middle" fill="#f97316" font-size="24" font-family="'Segoe UI',sans-serif">Mobile Dev image-3</text>
+</svg>

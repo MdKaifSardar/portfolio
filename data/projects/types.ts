@@ -52,6 +52,20 @@ export interface ProjectGalleryItem {
   caption: string;
 }
 
+export interface ProjectImageAsset {
+  src: string;
+  alt: string;
+  usage: string;
+  caption?: string;
+}
+
+export interface ProjectImageManifest {
+  cover: ProjectImageAsset;
+  hero: ProjectImageAsset;
+  sections?: Record<string, ProjectImageAsset>;
+  gallery?: ProjectImageAsset[];
+}
+
 export interface ProjectCaseStudy {
   id: number;
   slug: string;
@@ -87,5 +101,5 @@ export interface ProjectSummary {
   des: string;
   img: string;
   iconLists: string[];
-  displayCategory: "full-stack" | "ai-ml" | "mobile" | "side";
+  displayCategory: "full-stack" | "ai-ml" | "mobile" | "side" | "frontend";
 }

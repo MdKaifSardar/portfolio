@@ -5,11 +5,17 @@ type ProjectLoader = () => Promise<ProjectCaseStudy>;
 
 const projectLoaders: Record<string, ProjectLoader> = {
   "hashtrust-identity-platform": async () =>
-    (await import("./hashtrust")).hashtrustProject,
-  "shoemania-commerce-suite": async () =>
-    (await import("./shoemania")).shoeManiaProject,
+    (await import("./full-stack/hashtrust")).hashtrustProject,
+  "jeonft-user-platform": async () =>
+    (await import("./full-stack/jeonft")).jeonftProject,
   "resumebro-ai-resumes": async () =>
-    (await import("./resumebro")).resumeBroProject,
+    (await import("./full-stack/resumebro")).resumeBroProject,
+  "binary-hackathon-website": async () =>
+    (await import("./frontend/binary-hackathon")).binaryHackathonProject,
+  "bhor-magazine-site": async () =>
+    (await import("./frontend/bhor")).bhorProject,
+  "ecell-kgec-site": async () =>
+    (await import("./frontend/ecell")).ecellProject,
 };
 
 export { projectSummaries };

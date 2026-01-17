@@ -15,6 +15,12 @@ const CATEGORY_CONFIG = [
       "Transactional platforms, dashboards, and enterprise-ready surfaces.",
   },
   {
+    id: "frontend",
+    label: "Frontend showcases",
+    description:
+      "Brand-forward experiences with motion systems, editorial polish, and device-perfect layouts.",
+  },
+  {
     id: "ai-ml",
     label: "AI / ML initiatives",
     description:

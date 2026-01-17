@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540">
+  <rect width="960" height="540" fill="#020617" />
+  <rect x="30" y="30" width="900" height="480" rx="32" fill="#0f172a" stroke="#f97316" stroke-width="4" stroke-dasharray="20 14" />
+  <text x="50%" y="50%" text-anchor="middle" fill="#f97316" font-size="32" font-family="'Segoe UI',sans-serif">ShoeMania Placeholder</text>
+  <text x="50%" y="58%" text-anchor="middle" fill="#94a3b8" font-size="18" font-family="'Segoe UI',sans-serif">Replace with image-1</text>
+</svg>

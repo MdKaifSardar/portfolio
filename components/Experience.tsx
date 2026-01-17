@@ -84,7 +84,7 @@ const Experience = () => {
             </div>
 
             <div className="mt-6 flex items-center justify-between text-sm font-semibold text-purple">
-              <span>View case study</span>
+              <span>View more</span>
               <FaLocationArrow className="h-4 w-4" />
             </div>
           </Button>

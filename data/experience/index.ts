@@ -4,10 +4,11 @@ import { experienceSummaries } from "./summaries";
 type ExperienceLoader = () => Promise<ExperienceCaseStudy>;
 
 const experienceLoaders: Record<string, ExperienceLoader> = {
-  "frontend-engineer-intern": async () =>
-    (await import("./frontend-intern")).frontendInternExperience,
-  "mobile-app-dev-jsm-tech": async () =>
-    (await import("./mobile-jsm")).mobileJsmExperience,
+  "edutouch-learning-platform": async () =>
+    (await import("./freelance/EduTouch/edutouch")).eduTouchExperience,
+  "stitch-my-clothes-platform": async () =>
+    (await import("./freelance/stitch-my-clothes/stitch"))
+      .stitchMyClothesExperience,
 };
 
 export { experienceSummaries };
