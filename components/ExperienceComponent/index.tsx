@@ -1,9 +1,9 @@
+import GalleryCarousel from "@/components/shared/GalleryCarousel";
 import type { ExperienceCaseStudy } from "@/data/experience/types";
 
 import AchievementGrid from "./_components/AchievementGrid";
 import DocumentationGrid from "./_components/DocumentationGrid";
 import FocusAreaGrid from "./_components/FocusAreaGrid";
-import GalleryGrid from "./_components/GalleryGrid";
 import HeroSection from "./_components/HeroSection";
 import MilestoneTimeline from "./_components/MilestoneTimeline";
 import ResponsibilityGrid from "./_components/ResponsibilityGrid";
@@ -24,7 +24,10 @@ const ExperienceDetail = ({ experience }: ExperienceDetailProps) => {
           title="Visual highlights"
           description="Snapshots from the journeys, handoffs, and surfaces that defined the work."
         >
-          <GalleryGrid gallery={experience.gallery} />
+          <GalleryCarousel
+            items={experience.gallery}
+            ariaLabel={`${experience.company} experience gallery`}
+          />
         </SectionShell>
       )}
 

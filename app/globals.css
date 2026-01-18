@@ -87,4 +87,21 @@
   .black-gradient {
     background: linear-gradient(90deg, #161a31 0%, #06091f 100%);
   }
+
+  .hero-float {
+    animation: hero-float 6s ease-in-out infinite;
+    will-change: transform;
+  }
+}
+
+@keyframes hero-float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }

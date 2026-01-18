@@ -1,9 +1,9 @@
+import GalleryCarousel from "@/components/shared/GalleryCarousel";
 import type { ProjectCaseStudy } from "@/data/projects/types";
 
 import AchievementPanel from "./_components/AchievementPanel";
 import DocumentationGrid from "./_components/DocumentationGrid";
 import FeatureGrid from "./_components/FeatureGrid";
-import GalleryGrid from "./_components/GalleryGrid";
 import HeroSection from "./_components/HeroSection";
 import MilestoneTimeline from "./_components/MilestoneTimeline";
 import SectionShell from "./_components/SectionShell";
@@ -18,13 +18,18 @@ const ProjectDetail = ({ project }: ProjectDetailProps) => {
     <div className="space-y-16 lg:space-y-20">
       <HeroSection project={project} />
 
-      <SectionShell
-        eyebrow="Project gallery"
-        title="Visual highlights"
-        description="A quick look at the states, flows, and artifacts that made this launch feel polished."
-      >
-        <GalleryGrid gallery={project.gallery} />
-      </SectionShell>
+      {project.gallery.length > 0 && (
+        <SectionShell
+          eyebrow="Project gallery"
+          title="Visual highlights"
+          description="A quick look at the states, flows, and artifacts that made this launch feel polished."
+        >
+          <GalleryCarousel
+            items={project.gallery}
+            ariaLabel={`${project.title} gallery carousel`}
+          />
+        </SectionShell>
+      )}
 
       <SectionShell
         eyebrow="Project features"
