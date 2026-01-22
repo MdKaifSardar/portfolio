@@ -6,7 +6,7 @@ import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 
 const Hero = () => {
   return (
-    <div className="pb-20 pt-36">
+    <div className="pb-14 pt-24 md:pb-20 md:pt-28 lg:pt-24">
       {/**
        *  UI: Spotlights
        *  Link: https://ui.aceternity.com/components/spotlight
@@ -40,10 +40,10 @@ const Hero = () => {
         />
       </div>
 
-      <div className="flex justify-center relative my-20 z-10">
-        <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
-          <p className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-80">
-            Dynamic Web Magic with Next.js
+      <div className="relative z-10 my-10 flex justify-center md:my-16">
+        <div className="flex max-w-[92vw] flex-col items-center justify-center text-center sm:max-w-xl lg:max-w-[60vw]">
+          <p className="max-w-80 text-center text-[11px] uppercase tracking-[0.35em] text-blue-100 sm:text-xs">
+            Systems engineering & applied ai
           </p>
 
           {/**
@@ -52,17 +52,18 @@ const Hero = () => {
            *  change md:text-6xl, add more responsive code
            */}
           <TextGenerateEffect
-            words="Transforming Concepts into Seamless User Experiences"
-            className="text-center text-[40px] md:text-5xl lg:text-6xl"
+            words="Building resilient software for trading, learning, and AI tooling"
+            className="text-center text-[32px] leading-tight sm:text-[40px] md:text-5xl lg:text-6xl xl:text-7xl"
           />
 
-          <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
-            Hi! I&apos;m MD Kaif Sardar, a Next.js Developer based in India.
+          <p className="mb-5 text-base leading-relaxed text-white/80 sm:text-lg md:text-xl">
+            I&apos;m MD Kaif Sardar, a software engineer building scalable web
+            platforms and intelligent systems.
           </p>
 
-          <a href="#about">
+          <a href="#projects">
             <MagicButton
-              title="Show my work"
+              title="View my work"
               icon={<FaLocationArrow />}
               position="right"
             />

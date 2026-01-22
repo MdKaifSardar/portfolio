@@ -19,54 +19,53 @@ export interface CertificationHighlight {
 export const achievementHighlights: AchievementHighlight[] = [
   {
     id: 1,
-    metric: "40K+",
-    title: "rituals completed each month",
+    metric: "30% faster",
+    title: "EduTouch LMS launch velocity",
     description:
-      "Habit Coach users stay on track thanks to automation hand-offs and behavioral nudges baked into the product.",
-    proof: "Habit Coach Mobile Suite",
+      "Edge rendering, streaming, and API caching trimmed page loads by 30% and cut latency 25% across App Router classrooms.",
+    proof: "EduTouch platform",
   },
   {
     id: 2,
-    metric: "18%",
-    title: "conversion lift for Commerce Pulse",
+    metric: "18 secure APIs",
+    title: "HashTrust identity workspace",
     description:
-      "Tuned experimentation pipelines and journey analytics helped the merchandising team unlock a double-digit uplift.",
-    proof: "Commerce Pulse Intelligence",
+      "Next.js + FastAPI stack anchors credentials on-chain with GenAI fraud checks, keeping onboarding under five minutes.",
+    proof: "HashTrust platform",
   },
   {
     id: 3,
-    metric: "<120ms",
-    title: "p95 interaction time across hero experiences",
+    metric: "3x throughput",
+    title: "ResumeBro AI resume studio",
     description:
-      "Perf budgets, streaming data, and suspense boundaries keep complex 3D scenes under the latency ceiling.",
+      "Server Actions + Firebase pipelines deliver 99% typed schemas and generate resumes three times faster for candidates.",
+    proof: "ResumeBro",
   },
 ];
 
 export const certificationHighlights: CertificationHighlight[] = [
   {
     id: 1,
-    title: "AWS Certified Solutions Architect — Associate",
-    issuer: "Amazon Web Services",
-    year: "2023",
+    title: "Supervised Machine Learning: Regression and Classification",
+    issuer: "DeepLearning.AI & Stanford Online (Coursera)",
+    year: "2024",
     focus:
-      "Distributed systems, resiliency patterns, and cost-aware cloud architecture.",
-    credentialId: "AWS-ASA-9XY2",
+      "Andrew Ng specialization track covering linear regression, logistic regression, and regularization best practices.",
   },
   {
     id: 2,
-    title: "Google Professional Machine Learning Engineer",
-    issuer: "Google Cloud",
-    year: "2022",
+    title: "Advanced Learning Algorithms",
+    issuer: "DeepLearning.AI & Stanford Online (Coursera)",
+    year: "2024",
     focus:
-      "Model lifecycle management, Vertex AI pipelines, and responsible AI guardrails.",
-    credentialId: "GCP-ML-44FT",
+      "Neural networks, decision trees, and optimization techniques guided by Andrew Ng's ML Specialization.",
   },
   {
     id: 3,
-    title: "Meta Certified React Native Developer",
-    issuer: "Meta",
-    year: "2021",
+    title: "Unsupervised Learning, Recommenders, and Reinforcement Learning",
+    issuer: "DeepLearning.AI & Stanford Online (Coursera)",
+    year: "2024",
     focus:
-      "Native module bridges, performance profiling, and release automation across platforms.",
+      "Clustering, anomaly detection, recommender pipelines, and RL foundations from the Andrew Ng-led series.",
   },
 ];

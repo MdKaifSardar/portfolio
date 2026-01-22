@@ -4,7 +4,7 @@ import { binaryHackathonImages } from "./binary-hackathon-images";
 export const binaryHackathonProject: ProjectCaseStudy = {
   id: 4,
   slug: "binary-hackathon-website",
-  title: "Binary Hackathon Frontend",
+  title: "Binary Hackathon Frontend Lead",
   client: "Dev Community KGEC",
   excerpt:
     "Lead the Dev Community KGEC frontend pod to ship Binary Hackathon's retro site with cinematic motion, crisp performance, and college pride.",

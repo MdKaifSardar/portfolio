@@ -12,8 +12,9 @@ import { navSocialLinks, projectCategories } from "@/data";
 import {
   FaGithub,
   FaLinkedin,
-  FaXTwitter,
   FaChevronDown,
+  FaBars,
+  FaXmark,
 } from "react-icons/fa6";
 
 export const FloatingNav = ({
@@ -32,6 +33,8 @@ export const FloatingNav = ({
   // set true for the initial state so that nav bar is visible in the hero section
   const [visible, setVisible] = useState(true);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileProjectsOpen, setMobileProjectsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
 
   useMotionValueEvent(scrollYProgress, "change", (current) => {
@@ -81,10 +84,20 @@ export const FloatingNav = ({
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setMobileMenuOpen(false);
+      }
+    };
+    window.addEventListener("keydown", handleEscape);
+    return () => window.removeEventListener("keydown", handleEscape);
+  }, [mobileMenuOpen]);
+
   const SOCIAL_ICONS: Record<string, JSX.Element> = {
     github: <FaGithub className="h-4 w-4" />,
     linkedin: <FaLinkedin className="h-4 w-4" />,
-    twitter: <FaXTwitter className="h-4 w-4" />,
   };
 
   return (
@@ -113,7 +126,22 @@ export const FloatingNav = ({
         }}
       >
         <div className="flex w-full items-center justify-between gap-6">
-          <div className="flex flex-1 flex-wrap items-center gap-4">
+          <Link
+            href="/"
+            className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.25em] text-white/80 transition hover:text-white"
+            aria-label="Go to homepage"
+          >
+            <span className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-white/10 p-1">
+              <img
+                src="/logo-kaif.png"
+                alt="Kaif logo"
+                className="h-full w-full rounded-full object-contain"
+              />
+            </span>
+            <span className="sr-only">Kaif</span>
+          </Link>
+
+          <div className="hidden flex-1 flex-wrap items-center gap-4 md:flex">
             {navItems.map((navItem: any, idx: number) => {
               const isProjects = navItem.link === "#projects";
 
@@ -195,21 +223,153 @@ export const FloatingNav = ({
           </div>
 
           <div className="flex items-center gap-3">
-            {navSocialLinks.map((social) => (
-              <a
-                key={social.id}
-                href={social.href}
-                target="_blank"
-                rel="noreferrer"
-                aria-label={social.label}
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-white/5 text-white transition hover:border-white/60 hover:bg-white/10"
-              >
-                {SOCIAL_ICONS[social.id] ?? <FaGithub className="h-4 w-4" />}
-              </a>
-            ))}
+            <div className="hidden items-center gap-3 md:flex">
+              {navSocialLinks.map((social) => (
+                <a
+                  key={social.id}
+                  href={social.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={social.label}
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-white/5 text-white transition hover:border-white/60 hover:bg-white/10"
+                >
+                  {SOCIAL_ICONS[social.id] ?? <FaGithub className="h-4 w-4" />}
+                </a>
+              ))}
+            </div>
+            <button
+              type="button"
+              onClick={() => setMobileMenuOpen(true)}
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-white/5 text-white transition hover:border-white/60 hover:bg-white/10 md:hidden"
+              aria-label="Open menu"
+            >
+              <FaBars className="h-4 w-4" />
+            </button>
           </div>
         </div>
       </motion.div>
+
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            className="fixed inset-0 z-[5001] md:hidden"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <div
+              className="absolute inset-0 bg-black/70 backdrop-blur-sm"
+              onClick={() => setMobileMenuOpen(false)}
+            />
+            <motion.aside
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "spring", stiffness: 260, damping: 26 }}
+              className="absolute right-0 top-0 h-full w-[85vw] max-w-sm border-l border-white/10 bg-[#050814] px-6 pb-10 pt-8"
+            >
+              <div className="flex items-center justify-between">
+                <p className="text-xs uppercase tracking-[0.4em] text-white/50">
+                  Navigation
+                </p>
+                <button
+                  type="button"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-white/5 text-white"
+                  aria-label="Close menu"
+                >
+                  <FaXmark className="h-4 w-4" />
+                </button>
+              </div>
+
+              <nav className="mt-8 space-y-4">
+                {navItems.map((item) => {
+                  const isProjects = item.link === "#projects";
+
+                  if (!isProjects) {
+                    return (
+                      <Link
+                        key={item.link}
+                        href={item.link}
+                        className="block rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-semibold text-white/80 transition hover:border-white/30 hover:text-white"
+                        onClick={(event) => {
+                          handleAnchorClick(event, item.link);
+                          setMobileMenuOpen(false);
+                        }}
+                      >
+                        {item.name}
+                      </Link>
+                    );
+                  }
+
+                  return (
+                    <div
+                      key={item.link}
+                      className="rounded-2xl border border-white/10 bg-white/5"
+                    >
+                      <button
+                        type="button"
+                        onClick={() => setMobileProjectsOpen((prev) => !prev)}
+                        className="flex w-full items-center justify-between px-4 py-3 text-sm font-semibold text-white/80 transition hover:text-white"
+                        aria-expanded={mobileProjectsOpen}
+                        aria-controls="mobile-projects-list"
+                      >
+                        <span>{item.name}</span>
+                        <FaChevronDown
+                          className={`h-4 w-4 transition ${
+                            mobileProjectsOpen ? "rotate-180" : "rotate-0"
+                          }`}
+                        />
+                      </button>
+                      <div
+                        id="mobile-projects-list"
+                        className={`space-y-2 border-t border-white/10 px-3 pb-3 ${
+                          mobileProjectsOpen ? "block" : "hidden"
+                        }`}
+                      >
+                        {projectCategories.map((category) => (
+                          <Link
+                            key={category.id}
+                            href={`#projects-${category.id}`}
+                            className="block rounded-xl border border-white/10 px-3 py-2 text-sm text-white/80 transition hover:border-white/30 hover:bg-white/5 hover:text-white"
+                            onClick={(event) => {
+                              handleAnchorClick(
+                                event,
+                                `#projects-${category.id}`,
+                              );
+                              setMobileMenuOpen(false);
+                              setMobileProjectsOpen(false);
+                            }}
+                          >
+                            {category.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                })}
+              </nav>
+
+              <div className="mt-10 flex items-center gap-3">
+                {navSocialLinks.map((social) => (
+                  <a
+                    key={`mobile-${social.id}`}
+                    href={social.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={social.label}
+                    className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/5 text-white transition hover:border-white/60 hover:bg-white/10"
+                  >
+                    {SOCIAL_ICONS[social.id] ?? (
+                      <FaGithub className="h-4 w-4" />
+                    )}
+                  </a>
+                ))}
+              </div>
+            </motion.aside>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </AnimatePresence>
   );
 };

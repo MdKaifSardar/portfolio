@@ -13,17 +13,12 @@ export const navSocialLinks = [
   {
     id: "github",
     label: "GitHub",
-    href: "https://github.com/mkaifsard",
+    href: "https://github.com/MdKaifSardar/",
   },
   {
     id: "linkedin",
     label: "LinkedIn",
-    href: "https://www.linkedin.com/in/md-kaif-sardar",
-  },
-  {
-    id: "twitter",
-    label: "Twitter",
-    href: "https://twitter.com/mkaifcodes",
+    href: "https://www.linkedin.com/in/md-kaif-sardar-12aab4290/",
   },
 ];
 
@@ -32,13 +27,13 @@ export const aboutSections = [
     id: "impact",
     title: "Core strengths",
     description:
-      "Next.js + TypeScript builds tuned for analytical dashboards, trading surfaces, and learning platforms.",
+      "Performance-first Next.js builds for trading, learning, and analytics.",
     items: [
       {
         id: 1,
-        title: "High-performance product surfaces",
+        title: "Fast product surfaces",
         description:
-          "Design streaming UIs, optimistic states, and accessibility-first layouts so experiences stay fast on any device.",
+          "Dashboards and trading UIs stay sub-second, even with real-time data.",
         className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
         imgClassName: "w-full h-full",
         titleClassName: "justify-end",
@@ -47,9 +42,9 @@ export const aboutSections = [
       },
       {
         id: 2,
-        title: "Secure REST + data APIs",
+        title: "Secure REST APIs",
         description:
-          "OpenAPI-first services with RBAC, telemetry, and Azure-hosted secrets keep trading and ops data trustworthy.",
+          "OpenAPI specs, RBAC, and Azure secrets keep every endpoint auditable.",
         className: "lg:col-span-2 md:col-span-3 md:row-span-2",
         imgClassName: "",
         titleClassName: "justify-start",
@@ -58,9 +53,8 @@ export const aboutSections = [
       },
       {
         id: 3,
-        title: "Measured improvements",
-        description:
-          "Recent launches shipped with 30% faster load times and 25% lower API latency through profiling, caching, and edge rendering.",
+        title: "Eager to Learn and Adapt",
+        // description: "Eager to Learn and Adapt",
         className: "lg:col-span-2 md:col-span-3 md:row-span-2",
         imgClassName: "",
         titleClassName: "justify-center",
@@ -71,15 +65,14 @@ export const aboutSections = [
   },
   {
     id: "practice",
-    title: "Systems & habits",
-    description:
-      "Playbooks, telemetry, and enablement assets that keep releases reliable long after hand-off.",
+    title: "Delivery rituals",
+    description: "Guardrails that keep every release reliable.",
     items: [
       {
         id: 4,
         title: "Cloud-aware delivery",
         description:
-          "Ship workloads on Azure, Vercel, and SWA with Sentry budgets, Grafana-style dashboards, and rollback scripts ready.",
+          "Deploy on Vercel + Azure with telemetry, error budgets, and rollback playbooks.",
         className: "lg:col-span-2 md:col-span-3 md:row-span-1",
         imgClassName: "",
         titleClassName: "justify-start",
@@ -88,9 +81,8 @@ export const aboutSections = [
       },
       {
         id: 5,
-        title: "Collaboration rituals",
-        description:
-          "Async updates, concise RFCs, and Loom walkthroughs keep design, product, and trading ops aligned without waiting.",
+        title: "Production ready code",
+        description: "Type-safe, tested, and peer-reviewed codebases",
         className: "md:col-span-3 md:row-span-2",
         imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
         titleClassName: "justify-center md:justify-start lg:justify-center",
@@ -99,9 +91,8 @@ export const aboutSections = [
       },
       {
         id: 6,
-        title: "Always-learning builder",
-        description:
-          "B.Tech CSE (KGEC, 2023-27) with a focus on secure API design, distributed systems, and real-time analytics research.",
+        title: "Student builder",
+        // description: "Focusing on learning and growth, one project at a time.",
         className: "lg:col-span-2 md:col-span-3 md:row-span-1",
         imgClassName: "",
         titleClassName: "justify-center md:max-w-full max-w-60 text-center",
