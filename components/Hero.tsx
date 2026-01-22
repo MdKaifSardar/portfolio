@@ -6,7 +6,7 @@ import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 
 const Hero = () => {
   return (
-    <div className="relative overflow-hidden pb-14 pt-24 md:pb-20 md:pt-28 lg:pt-24">
+    <div className="relative pb-14 pt-24 md:pb-20 md:pt-28 lg:pt-24">
       {/**
        *  UI: Spotlights
        *  Link: https://ui.aceternity.com/components/spotlight
@@ -28,7 +28,7 @@ const Hero = () => {
        *  change bg color to bg-black-100 and reduce grid color from
        *  0.2 to 0.03
        */}
-      <div className="absolute left-0 top-0 flex h-[80vh] w-full items-center justify-center dark:bg-black-100 bg-white dark:bg-grid-white/[0.03] bg-grid-black-100/[0.2] sm:h-[85vh] md:h-screen">
+      <div className="absolute left-1/2 top-0 flex h-full w-screen -translate-x-1/2 items-center justify-center dark:bg-black-100 bg-white dark:bg-grid-white/[0.03] bg-grid-black-100/[0.2]">
         {/* Radial gradient for the container to give a faded look */}
         <div
           // chnage the bg to bg-black-100, so it matches the bg color and will blend in

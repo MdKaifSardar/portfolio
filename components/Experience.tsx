@@ -26,6 +26,7 @@ const Experience = () => {
   const cardRefs = useRef<Array<HTMLDivElement | null>>([]);
   const scrollLock = useRef(false);
   const scrollTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const snapTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const scrollToCard = useCallback((index: number) => {
     const container = scrollRef.current;
@@ -162,24 +163,30 @@ const Experience = () => {
           ref={scrollRef}
           onScroll={() => {
             if (scrollLock.current) return;
-            const container = scrollRef.current;
-            if (!container) return;
-            const centers = cardRefs.current.map(
-              (card) => (card?.offsetLeft ?? 0) + (card?.clientWidth ?? 0) / 2,
-            );
-            const current = container.scrollLeft + container.clientWidth / 2;
-            let closestIndex = activeIndex;
-            let minDistance = Number.POSITIVE_INFINITY;
-            centers.forEach((center, index) => {
-              const distance = Math.abs(current - center);
-              if (distance < minDistance) {
-                minDistance = distance;
-                closestIndex = index;
-              }
-            });
-            if (closestIndex !== activeIndex) {
-              setActiveIndex(closestIndex);
+            if (snapTimeout.current) {
+              clearTimeout(snapTimeout.current);
             }
+            snapTimeout.current = setTimeout(() => {
+              const container = scrollRef.current;
+              if (!container) return;
+              const centers = cardRefs.current.map(
+                (card) =>
+                  (card?.offsetLeft ?? 0) + (card?.clientWidth ?? 0) / 2,
+              );
+              const current = container.scrollLeft + container.clientWidth / 2;
+              let closestIndex = activeIndex;
+              let minDistance = Number.POSITIVE_INFINITY;
+              centers.forEach((center, index) => {
+                const distance = Math.abs(current - center);
+                if (distance < minDistance) {
+                  minDistance = distance;
+                  closestIndex = index;
+                }
+              });
+              if (closestIndex !== activeIndex) {
+                setActiveIndex(closestIndex);
+              }
+            }, 120);
           }}
           className="flex snap-x snap-mandatory items-stretch gap-4 overflow-x-auto overflow-y-hidden scroll-smooth pb-2 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
         >

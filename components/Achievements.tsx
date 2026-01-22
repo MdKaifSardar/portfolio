@@ -19,6 +19,12 @@ const Achievements = () => {
   const certificationScrollTimeout = useRef<ReturnType<
     typeof setTimeout
   > | null>(null);
+  const achievementSnapTimeout = useRef<ReturnType<typeof setTimeout> | null>(
+    null,
+  );
+  const certificationSnapTimeout = useRef<ReturnType<typeof setTimeout> | null>(
+    null,
+  );
 
   const scrollToCard = (
     container: HTMLDivElement | null,
@@ -85,46 +91,56 @@ const Achievements = () => {
 
   const handleAchievementScroll = useCallback(() => {
     if (achievementScrollLock.current) return;
-    const container = achievementsRef.current;
-    if (!container) return;
-    const centers = achievementCardsRef.current.map(
-      (card) => (card?.offsetLeft ?? 0) + (card?.clientWidth ?? 0) / 2,
-    );
-    const current = container.scrollLeft + container.clientWidth / 2;
-    let closestIndex = activeAchievement;
-    let minDistance = Number.POSITIVE_INFINITY;
-    centers.forEach((center, index) => {
-      const distance = Math.abs(current - center);
-      if (distance < minDistance) {
-        minDistance = distance;
-        closestIndex = index;
-      }
-    });
-    if (closestIndex !== activeAchievement) {
-      setActiveAchievement(closestIndex);
+    if (achievementSnapTimeout.current) {
+      clearTimeout(achievementSnapTimeout.current);
     }
+    achievementSnapTimeout.current = setTimeout(() => {
+      const container = achievementsRef.current;
+      if (!container) return;
+      const centers = achievementCardsRef.current.map(
+        (card) => (card?.offsetLeft ?? 0) + (card?.clientWidth ?? 0) / 2,
+      );
+      const current = container.scrollLeft + container.clientWidth / 2;
+      let closestIndex = activeAchievement;
+      let minDistance = Number.POSITIVE_INFINITY;
+      centers.forEach((center, index) => {
+        const distance = Math.abs(current - center);
+        if (distance < minDistance) {
+          minDistance = distance;
+          closestIndex = index;
+        }
+      });
+      if (closestIndex !== activeAchievement) {
+        setActiveAchievement(closestIndex);
+      }
+    }, 120);
   }, [activeAchievement]);
 
   const handleCertificationScroll = useCallback(() => {
     if (certificationScrollLock.current) return;
-    const container = certificationsRef.current;
-    if (!container) return;
-    const centers = certificationCardsRef.current.map(
-      (card) => (card?.offsetLeft ?? 0) + (card?.clientWidth ?? 0) / 2,
-    );
-    const current = container.scrollLeft + container.clientWidth / 2;
-    let closestIndex = activeCertification;
-    let minDistance = Number.POSITIVE_INFINITY;
-    centers.forEach((center, index) => {
-      const distance = Math.abs(current - center);
-      if (distance < minDistance) {
-        minDistance = distance;
-        closestIndex = index;
-      }
-    });
-    if (closestIndex !== activeCertification) {
-      setActiveCertification(closestIndex);
+    if (certificationSnapTimeout.current) {
+      clearTimeout(certificationSnapTimeout.current);
     }
+    certificationSnapTimeout.current = setTimeout(() => {
+      const container = certificationsRef.current;
+      if (!container) return;
+      const centers = certificationCardsRef.current.map(
+        (card) => (card?.offsetLeft ?? 0) + (card?.clientWidth ?? 0) / 2,
+      );
+      const current = container.scrollLeft + container.clientWidth / 2;
+      let closestIndex = activeCertification;
+      let minDistance = Number.POSITIVE_INFINITY;
+      centers.forEach((center, index) => {
+        const distance = Math.abs(current - center);
+        if (distance < minDistance) {
+          minDistance = distance;
+          closestIndex = index;
+        }
+      });
+      if (closestIndex !== activeCertification) {
+        setActiveCertification(closestIndex);
+      }
+    }, 120);
   }, [activeCertification]);
   return (
     <section id="achievements" className="py-20">

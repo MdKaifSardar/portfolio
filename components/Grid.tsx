@@ -134,6 +134,7 @@ const Grid = () => {
   const mobileResumeTimeout = useRef<NodeJS.Timeout | null>(null);
   const mobileAutoScrollInFlight = useRef(false);
   const mobileAutoScrollReset = useRef<NodeJS.Timeout | null>(null);
+  const mobileSnapTimeout = useRef<NodeJS.Timeout | null>(null);
 
   const scheduleResume = useCallback(() => {
     if (resumeTimeout.current) {
@@ -319,27 +320,31 @@ const Grid = () => {
         return;
       }
 
-      handleMobileInteraction();
-      const offsets = mobileSlideRefs.current.map(
-        (slide) => slide?.offsetLeft ?? 0,
-      );
-      const currentScroll = container.scrollLeft + container.clientWidth / 2;
-      let closestIndex = mobileActiveSlide;
-      let minDistance = Number.POSITIVE_INFINITY;
-
-      offsets.forEach((offset, index) => {
-        const slideWidth = mobileSlideRefs.current[index]?.clientWidth ?? 0;
-        const slideCenter = offset + slideWidth / 2;
-        const distance = Math.abs(currentScroll - slideCenter);
-        if (distance < minDistance) {
-          minDistance = distance;
-          closestIndex = index;
-        }
-      });
-
-      if (closestIndex !== mobileActiveSlide) {
-        setMobileActiveSlide(closestIndex);
+      if (mobileSnapTimeout.current) {
+        clearTimeout(mobileSnapTimeout.current);
       }
+      mobileSnapTimeout.current = setTimeout(() => {
+        const offsets = mobileSlideRefs.current.map(
+          (slide) => slide?.offsetLeft ?? 0,
+        );
+        const currentScroll = container.scrollLeft + container.clientWidth / 2;
+        let closestIndex = mobileActiveSlide;
+        let minDistance = Number.POSITIVE_INFINITY;
+
+        offsets.forEach((offset, index) => {
+          const slideWidth = mobileSlideRefs.current[index]?.clientWidth ?? 0;
+          const slideCenter = offset + slideWidth / 2;
+          const distance = Math.abs(currentScroll - slideCenter);
+          if (distance < minDistance) {
+            minDistance = distance;
+            closestIndex = index;
+          }
+        });
+
+        if (closestIndex !== mobileActiveSlide) {
+          setMobileActiveSlide(closestIndex);
+        }
+      }, 120);
     };
 
     const handlePointer = () => handleMobileInteraction();
