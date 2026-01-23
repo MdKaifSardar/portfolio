@@ -41,7 +41,7 @@ const Hero = () => {
         <div className="grid w-full max-w-[92vw] items-center gap-10 text-center sm:max-w-xl lg:max-w-[70vw] lg:grid-cols-[1.1fr_0.9fr] lg:text-left">
           <div className="flex flex-col items-center justify-center lg:items-start">
             <p className="max-w-80 text-center text-[11px] uppercase tracking-[0.35em] text-blue-100 sm:text-xs lg:text-left">
-              Software engineer • Student
+              Building clean, resilient software for real users
             </p>
 
             {/**
@@ -53,27 +53,14 @@ const Hero = () => {
               words="Building clean, resilient software for real users"
               className="text-center text-[32px] leading-tight sm:text-[40px] md:text-5xl lg:text-6xl xl:text-7xl lg:text-left"
             />
-
-            <p className="mb-6 text-base leading-relaxed text-white/80 sm:text-lg md:text-xl lg:mb-8">
-              I&apos;m MD Kaif Sardar, focused on full‑stack web platforms and
-              AI‑ready products.
-            </p>
-
-            <a href="#projects">
-              <MagicButton
-                title="View my work"
-                icon={<FaLocationArrow />}
-                position="right"
-              />
-            </a>
           </div>
 
           <div className="mx-auto flex w-full max-w-sm items-center justify-center lg:justify-end">
             <div className="relative aspect-square w-full overflow-hidden rounded-[2.5rem] border border-white/15 bg-gradient-to-br from-white/10 via-white/5 to-transparent shadow-[0_30px_80px_rgba(6,18,45,0.6)]">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(129,140,248,0.25),_transparent_55%)]" />
               <img
-                src="/profile.jpg"
-                alt="MD Kaif Sardar portrait"
+                src="/logo-kaif.png"
+                alt="Kaif logo"
                 className="relative h-full w-full object-cover"
               />
             </div>
