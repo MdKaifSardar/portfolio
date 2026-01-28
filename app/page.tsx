@@ -2,7 +2,7 @@
 
 import { navItems } from "@/data";
 
-import Hero from "@/components/Hero";
+import HeroSection from "@/components/HeroSection";
 import Grid from "@/components/Grid";
 import Footer from "@/components/Footer";
 import Experience from "@/components/Experience";
@@ -14,7 +14,7 @@ const Home = () => {
   return (
     <main className="relative flex flex-col items-center justify-center overflow-hidden bg-black-100 mx-auto">
       {/* Hero handles its own full-width layout */}
-      <Hero />
+      <HeroSection />
 
       {/* Constrained container for the rest of the content */}
       <div className="w-full max-w-7xl px-5 sm:px-10">

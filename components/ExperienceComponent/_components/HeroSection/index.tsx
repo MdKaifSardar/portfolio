@@ -1,6 +1,7 @@
 import type { ExperienceCaseStudy } from "@/data/experience/types";
 
 import StatGrid from "../StatGrid";
+import { FaArrowRight } from "react-icons/fa6";
 
 interface HeroSectionProps {
   experience: ExperienceCaseStudy;
@@ -18,7 +19,7 @@ const HeroSection = ({ experience }: HeroSectionProps) => {
               <img
                 src={experience.hero.heroImage}
                 alt={`${experience.company} hero visual`}
-                className="h-full w-full object-contain"
+                className="h-full w-full object-cover"
               />
             </div>
           </div>
@@ -52,32 +53,16 @@ const HeroSection = ({ experience }: HeroSectionProps) => {
                 href={primaryLink.href}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-white transition hover:border-white/60 hover:bg-white/20"
+                className="mt-4 inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-black transition hover:bg-white/90 sm:w-auto"
               >
-                Visit live experience
-                <span aria-hidden="true">↗</span>
+                <span>Visit live experience</span>
+                <FaArrowRight className="h-4 w-4" />
               </a>
             )}
           </div>
 
           <div className="lg:max-w-xl">
             <StatGrid stats={experience.hero.stats} />
-          </div>
-
-          <div className="rounded-2xl border border-white/10 bg-black/30 p-4">
-            <p className="text-xs uppercase tracking-[0.3em] text-white/50">
-              Core focus
-            </p>
-            <div className="mt-3 flex flex-wrap gap-2 text-sm text-white/80">
-              {experience.hero.badges.map((badge) => (
-                <span
-                  key={badge}
-                  className="rounded-full border border-white/15 bg-white/5 px-3 py-1"
-                >
-                  {badge}
-                </span>
-              ))}
-            </div>
           </div>
         </div>
       </div>

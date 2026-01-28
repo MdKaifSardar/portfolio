@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 
 import { aboutSections } from "@/data";
 import { BentoGrid, BentoGridItem } from "./ui/BentoGrid";
@@ -399,7 +399,7 @@ const Grid = () => {
               className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/5 text-white transition hover:border-white/50 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple"
               aria-label="Show previous about section"
             >
-              <FaArrowLeft className="h-4 w-4" />
+              <FaChevronLeft className="h-4 w-4" />
             </button>
             <button
               type="button"
@@ -407,7 +407,7 @@ const Grid = () => {
               className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/5 text-white transition hover:border-white/50 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple"
               aria-label="Show next about section"
             >
-              <FaArrowRight className="h-4 w-4" />
+              <FaChevronRight className="h-4 w-4" />
             </button>
           </div>
         </div>
@@ -439,7 +439,7 @@ const Grid = () => {
               className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white transition hover:border-white/40 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple"
               aria-label="Show previous about card"
             >
-              <FaArrowLeft className="h-3.5 w-3.5" />
+              <FaChevronLeft className="h-3.5 w-3.5" />
             </button>
             <button
               type="button"
@@ -447,7 +447,7 @@ const Grid = () => {
               className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white transition hover:border-white/40 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple"
               aria-label="Show next about card"
             >
-              <FaArrowRight className="h-3.5 w-3.5" />
+              <FaChevronRight className="h-3.5 w-3.5" />
             </button>
           </div>
         </div>

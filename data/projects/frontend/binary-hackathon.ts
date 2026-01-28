@@ -40,17 +40,17 @@ export const binaryHackathonProject: ProjectCaseStudy = {
     ],
     links: [
       {
-        label: "View live site",
+        label: "Live site",
         href: "https://binary-web-2k26.vercel.app/",
         type: "primary",
         isExternal: true,
       },
-      {
-        label: "Design mood board",
-        href: "https://binary-web-2k26.vercel.app/",
-        type: "secondary",
-        isExternal: true,
-      },
+      // {
+      //   label: "Design mood board",
+      //   href: "https://binary-web-2k26.vercel.app/",
+      //   type: "secondary",
+      //   isExternal: true,
+      // },
     ],
   },
   features: [

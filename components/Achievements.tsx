@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 
 import { achievements, certifications } from "@/data";
 
@@ -143,243 +144,159 @@ const Achievements = () => {
     }, 120);
   }, [activeCertification]);
   return (
-    <section id="achievements" className="py-20">
-      <h1 className="heading">
-        Proof of <span className="text-purple">impact & credibility</span>
+    <div className="py-20 w-full">
+      <h1 className="heading mb-12">
+        Career <span className="text-purple">milestones & credentials</span>
       </h1>
 
-      <div className="mt-12 hidden gap-8 lg:grid lg:grid-cols-[1.1fr_0.9fr]">
-        <article className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-white/10 to-transparent p-8 shadow-[0_25px_80px_rgba(4,7,29,0.55)]">
-          <div className="absolute inset-0 pointer-events-none">
-            <div
-              className="absolute -right-24 top-[-20%] h-64 w-64 rounded-full bg-purple/30 blur-3xl"
-              aria-hidden
-            />
-          </div>
-          <p className="text-xs uppercase tracking-[0.4em] text-white/50">
-            Measurements
-          </p>
-          <h2 className="mt-2 text-2xl font-semibold text-white">
-            Product achievements
+      {/* Measurements Section */}
+      {/* Measurements Section */}
+      <section className="mb-20">
+        <div className="flex items-center justify-between mb-8">
+          <h2 className="text-lg font-semibold uppercase tracking-widest text-white/50 text-center md:text-left">
+            Impact Measurements
           </h2>
-          <p className="mt-2 text-sm text-white/70">
-            Signal captured from shipped platforms, looking at the mix of
-            retention, revenue, and experiential performance.
-          </p>
+          {/* Mobile Nav for Measurements */}
+          <div className="flex gap-2 lg:hidden">
+            <button
+              type="button"
+              onClick={() =>
+                moveAchievement(
+                  (activeAchievement - 1 + achievements.length) %
+                    achievements.length,
+                )
+              }
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/5 text-white transition hover:border-white/50 hover:bg-white/10"
+              aria-label="Previous achievement"
+            >
+              <FaChevronLeft className="h-4 w-4" />
+            </button>
+            <button
+              type="button"
+              onClick={() =>
+                moveAchievement((activeAchievement + 1) % achievements.length)
+              }
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/5 text-white transition hover:border-white/50 hover:bg-white/10"
+              aria-label="Next achievement"
+            >
+              <FaChevronRight className="h-4 w-4" />
+            </button>
+          </div>
+        </div>
 
-          <div className="mt-8 grid gap-6">
-            {achievements.map((item) => (
+        <div
+          ref={achievementsRef}
+          onScroll={handleAchievementScroll}
+          className="flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth pb-4 lg:grid lg:gap-6 lg:overflow-visible lg:pb-0 lg:grid-cols-3 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+        >
+          {achievements.map((item, index) => (
+            <div
+              key={item.id}
+              ref={(node) => {
+                achievementCardsRef.current[index] = node;
+              }}
+              className="relative w-full min-w-full shrink-0 snap-center lg:w-auto lg:min-w-0 overflow-hidden rounded-3xl border border-white/10 bg-[#050814]/80 p-6 shadow-xl transition hover:border-white/30"
+            >
               <div
-                key={item.id}
-                className="rounded-2xl border border-white/15 bg-black/40 p-5 backdrop-blur"
-              >
-                <div className="flex flex-wrap items-center justify-between gap-3">
-                  <span className="text-4xl font-semibold text-purple">
+                className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-purple/20 blur-2xl"
+                aria-hidden
+              />
+              <div className="relative z-10">
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-3xl font-bold text-purple">
                     {item.metric}
                   </span>
                   {item.proof && (
-                    <span className="text-xs font-semibold uppercase tracking-[0.35em] text-white/60">
+                    <span className="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-[10px] uppercase tracking-widest text-white/50">
                       {item.proof}
                     </span>
                   )}
                 </div>
-                <h3 className="mt-4 text-lg font-semibold text-white">
+                <h3 className="text-lg font-semibold text-white mb-2">
                   {item.title}
                 </h3>
-                <p className="mt-2 text-sm text-white/70">{item.description}</p>
+                <p className="text-sm text-white/70 leading-relaxed">
+                  {item.description}
+                </p>
               </div>
-            ))}
-          </div>
-        </article>
+            </div>
+          ))}
+        </div>
+      </section>
 
-        <article className="rounded-3xl border border-white/10 bg-[#050814]/80 p-8 shadow-[0_25px_80px_rgba(4,7,29,0.45)]">
-          <p className="text-xs uppercase tracking-[0.4em] text-white/50">
+      {/* Certifications Section */}
+      <section>
+        <div className="flex items-center justify-between mb-8">
+          <h2 className="text-lg font-semibold uppercase tracking-widest text-white/50">
             Certifications
-          </p>
-          <h2 className="mt-2 text-2xl font-semibold text-white">
-            Credible specializations
           </h2>
-          <p className="mt-2 text-sm text-white/70">
-            Independent boards validating architecture, machine learning, and
-            mobile build expertise.
-          </p>
+          <div className="flex gap-2">
+            <button
+              type="button"
+              onClick={() =>
+                moveCertification(
+                  (activeCertification - 1 + certifications.length) %
+                    certifications.length,
+                )
+              }
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/5 text-white transition hover:border-white/50 hover:bg-white/10"
+              aria-label="Previous certification"
+            >
+              <FaChevronLeft className="h-4 w-4" />
+            </button>
+            <button
+              type="button"
+              onClick={() =>
+                moveCertification(
+                  (activeCertification + 1) % certifications.length,
+                )
+              }
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/5 text-white transition hover:border-white/50 hover:bg-white/10"
+              aria-label="Next certification"
+            >
+              <FaChevronRight className="h-4 w-4" />
+            </button>
+          </div>
+        </div>
 
-          <div className="mt-6 space-y-5">
-            {certifications.map((item) => (
-              <div
-                key={item.id}
-                className="rounded-2xl border border-white/15 bg-black/30 p-5 transition hover:border-white/40"
-              >
-                <div className="flex flex-wrap items-center justify-between gap-2 text-white/60">
-                  <span className="text-xs uppercase tracking-[0.4em]">
-                    {item.year}
+        <div
+          ref={certificationsRef}
+          onScroll={handleCertificationScroll}
+          className="flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth pb-4 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+        >
+          {certifications.map((item, index) => (
+            <div
+              key={item.id}
+              ref={(node) => {
+                certificationCardsRef.current[index] = node;
+              }}
+              className="w-full shrink-0 snap-start lg:w-[calc(33.333%-14px)] rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent p-6 transition hover:border-white/30"
+            >
+              <div className="flex items-center justify-between text-white/50 mb-4">
+                <span className="text-xs font-mono border border-white/10 px-2 py-1 rounded bg-black/20">
+                  {item.year}
+                </span>
+                {item.credentialId && (
+                  <span className="text-[10px] tracking-wider uppercase">
+                    ID: {item.credentialId}
                   </span>
-                  {item.credentialId && (
-                    <span className="text-xs font-mono text-white/50">
-                      {item.credentialId}
-                    </span>
-                  )}
-                </div>
-                <h3 className="mt-3 text-lg font-semibold text-white">
-                  {item.title}
-                </h3>
-                <p className="text-sm text-white/60">{item.issuer}</p>
-                <p className="mt-3 text-sm text-white/70">{item.focus}</p>
+                )}
               </div>
-            ))}
-          </div>
-        </article>
-      </div>
 
-      <div className="mt-10 space-y-10 lg:hidden">
-        <div className="rounded-3xl border border-white/10 bg-gradient-to-b from-white/10 to-transparent p-5 shadow-[0_20px_60px_rgba(4,7,29,0.5)]">
-          <div className="flex items-center justify-between gap-4">
-            <div>
-              <p className="text-[11px] uppercase tracking-[0.4em] text-white/50">
-                Achievements
+              <h3 className="text-xl font-semibold text-white mb-1">
+                {item.title}
+              </h3>
+              <p className="text-sm font-medium text-purple mb-3">
+                {item.issuer}
               </p>
-              <h2 className="mt-2 text-lg font-semibold text-white">
-                Product wins
-              </h2>
-            </div>
-            <div className="flex items-center gap-2">
-              <button
-                type="button"
-                onClick={() =>
-                  moveAchievement(
-                    (activeAchievement - 1 + achievements.length) %
-                      achievements.length,
-                  )
-                }
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-white/5 text-white transition hover:border-white/50 hover:bg-white/10"
-                aria-label="Previous achievement"
-              >
-                ←
-              </button>
-              <button
-                type="button"
-                onClick={() =>
-                  moveAchievement((activeAchievement + 1) % achievements.length)
-                }
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-white/5 text-white transition hover:border-white/50 hover:bg-white/10"
-                aria-label="Next achievement"
-              >
-                →
-              </button>
-            </div>
-          </div>
-
-          <div
-            ref={achievementsRef}
-            onScroll={handleAchievementScroll}
-            className="mt-6 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-2 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
-          >
-            {achievements.map((item, index) => (
-              <div
-                key={item.id}
-                ref={(node) => {
-                  achievementCardsRef.current[index] = node;
-                }}
-                className="w-full shrink-0 snap-center"
-              >
-                <div className="rounded-2xl border border-white/15 bg-black/40 p-5 backdrop-blur">
-                  <div className="flex flex-wrap items-center justify-between gap-3">
-                    <span className="text-3xl font-semibold text-purple">
-                      {item.metric}
-                    </span>
-                    {item.proof && (
-                      <span className="text-[11px] font-semibold uppercase tracking-[0.35em] text-white/60">
-                        {item.proof}
-                      </span>
-                    )}
-                  </div>
-                  <h3 className="mt-4 text-lg font-semibold text-white">
-                    {item.title}
-                  </h3>
-                  <p className="mt-2 text-sm text-white/70">
-                    {item.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="rounded-3xl border border-white/10 bg-[#050814]/80 p-5 shadow-[0_20px_60px_rgba(4,7,29,0.45)]">
-          <div className="flex items-center justify-between gap-4">
-            <div>
-              <p className="text-[11px] uppercase tracking-[0.4em] text-white/50">
-                Certifications
+              <p className="text-sm text-white/60 leading-relaxed">
+                {item.focus}
               </p>
-              <h2 className="mt-2 text-lg font-semibold text-white">
-                Specializations
-              </h2>
             </div>
-            <div className="flex items-center gap-2">
-              <button
-                type="button"
-                onClick={() =>
-                  moveCertification(
-                    (activeCertification - 1 + certifications.length) %
-                      certifications.length,
-                  )
-                }
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-white/5 text-white transition hover:border-white/50 hover:bg-white/10"
-                aria-label="Previous certification"
-              >
-                ←
-              </button>
-              <button
-                type="button"
-                onClick={() =>
-                  moveCertification(
-                    (activeCertification + 1) % certifications.length,
-                  )
-                }
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-white/5 text-white transition hover:border-white/50 hover:bg-white/10"
-                aria-label="Next certification"
-              >
-                →
-              </button>
-            </div>
-          </div>
-
-          <div
-            ref={certificationsRef}
-            onScroll={handleCertificationScroll}
-            className="mt-6 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-2 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
-          >
-            {certifications.map((item, index) => (
-              <div
-                key={item.id}
-                ref={(node) => {
-                  certificationCardsRef.current[index] = node;
-                }}
-                className="w-full shrink-0 snap-center"
-              >
-                <div className="rounded-2xl border border-white/15 bg-black/30 p-5 transition hover:border-white/40">
-                  <div className="flex flex-wrap items-center justify-between gap-2 text-white/60">
-                    <span className="text-[11px] uppercase tracking-[0.4em]">
-                      {item.year}
-                    </span>
-                    {item.credentialId && (
-                      <span className="text-xs font-mono text-white/50">
-                        {item.credentialId}
-                      </span>
-                    )}
-                  </div>
-                  <h3 className="mt-3 text-lg font-semibold text-white">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm text-white/60">{item.issuer}</p>
-                  <p className="mt-3 text-sm text-white/70">{item.focus}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+          ))}
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 };
 
