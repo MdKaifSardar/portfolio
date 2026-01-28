@@ -28,17 +28,17 @@ export const ecellProject: ProjectCaseStudy = {
     ],
     links: [
       {
-        label: "Visit site",
+        label: "Live site",
         href: "https://e-cell-web.vercel.app/",
         type: "primary",
         isExternal: true,
       },
-      {
-        label: "Prototype",
-        href: "https://e-cell-web.vercel.app/",
-        type: "secondary",
-        isExternal: true,
-      },
+      // {
+      //   label: "Prototype",
+      //   href: "https://e-cell-web.vercel.app/",
+      //   type: "secondary",
+      //   isExternal: true,
+      // },
     ],
   },
   features: [

@@ -19,27 +19,27 @@ export interface CertificationHighlight {
 export const achievementHighlights: AchievementHighlight[] = [
   {
     id: 1,
-    metric: "30% faster",
-    title: "EduTouch LMS launch velocity",
+    metric: "6+ Shipped",
+    title: "Freelance & Enterprise Projects",
     description:
-      "Edge rendering, streaming, and API caching trimmed page loads by 30% and cut latency 25% across App Router classrooms.",
-    proof: "EduTouch platform",
+      "Delivered end-to-end full-stack platforms for education, trading, and analytics clients, maintaining strict SLAs.",
+    proof: "Career Output",
   },
   {
     id: 2,
-    metric: "18 secure APIs",
-    title: "HashTrust identity workspace",
+    metric: "10K+ Users",
+    title: "Cumulative Client Reach",
     description:
-      "Next.js + FastAPI stack anchors credentials on-chain with GenAI fraud checks, keeping onboarding under five minutes.",
-    proof: "HashTrust platform",
+      "Active daily users across deployed platforms like Stitch My Clothes, EduTouch and JeoNFT, scaling horizontally without friction.",
+    proof: "Global Impact",
   },
   {
     id: 3,
-    metric: "3x throughput",
-    title: "ResumeBro AI resume studio",
+    metric: "99.9% Uptime",
+    title: "System Reliability",
     description:
-      "Server Actions + Firebase pipelines deliver 99% typed schemas and generate resumes three times faster for candidates.",
-    proof: "ResumeBro",
+      "Architecture designed for fault tolerance and high availability, ensuring mission-critical exams and trades never fail.",
+    proof: "Performance",
   },
 ];
 
@@ -56,7 +56,7 @@ export const certificationHighlights: CertificationHighlight[] = [
     id: 2,
     title: "Advanced Learning Algorithms",
     issuer: "DeepLearning.AI & Stanford Online (Coursera)",
-    year: "2024",
+    year: "2025",
     focus:
       "Neural networks, decision trees, and optimization techniques guided by Andrew Ng's ML Specialization.",
   },
@@ -64,8 +64,16 @@ export const certificationHighlights: CertificationHighlight[] = [
     id: 3,
     title: "Unsupervised Learning, Recommenders, and Reinforcement Learning",
     issuer: "DeepLearning.AI & Stanford Online (Coursera)",
-    year: "2024",
+    year: "2025",
     focus:
       "Clustering, anomaly detection, recommender pipelines, and RL foundations from the Andrew Ng-led series.",
+  },
+  {
+    id: 4,
+    title: "Neural Networks and Deep Learning",
+    issuer: "DeepLearning.AI & Stanford Online (Coursera)",
+    year: "2025",
+    focus:
+      "Build foundational deep learning models, understand neural network architecture, and apply deep learning to real-world problems.",
   },
 ];

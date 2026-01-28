@@ -28,17 +28,17 @@ export const hashtrustProject: ProjectCaseStudy = {
     ],
     links: [
       {
-        label: "Visit platform",
+        label: "Live site",
         href: "https://hash-trust.vercel.app/",
         type: "primary",
         isExternal: true,
       },
-      {
-        label: "API reference",
-        href: "https://hash-trust.vercel.app/",
-        type: "secondary",
-        isExternal: true,
-      },
+      // {
+      //   label: "API reference",
+      //   href: "https://hash-trust.vercel.app/",
+      //   type: "secondary",
+      //   isExternal: true,
+      // },
     ],
   },
   features: [
@@ -144,13 +144,13 @@ export const hashtrustProject: ProjectCaseStudy = {
     },
   ],
   documentation: [
-    {
-      title: "Coming soon",
-      description:
-        "Detailed architecture and integration docs will be published closer to GA.",
-      href: "#",
-      format: "Work in progress",
-    },
+    // {
+    //   title: "Coming soon",
+    //   description:
+    //     "Detailed architecture and integration docs will be published closer to GA.",
+    //   href: "#",
+    //   format: "Work in progress",
+    // },
   ],
   gallery: (hashtrustImages.gallery ?? []).map(({ src, alt, caption }) => ({
     src,

@@ -33,6 +33,12 @@ const HeroSection = ({ project }: { project: ProjectCaseStudy }) => {
             </p>
           </div>
 
+          <div className="grid gap-3 sm:grid-cols-2">
+            {project.hero.links.map((link) => (
+              <CTAButton key={link.label} link={link} />
+            ))}
+          </div>
+
           <StatGrid stats={project.hero.stats} />
 
           <div className="rounded-2xl border border-white/10 bg-black/30 p-4">
@@ -49,12 +55,6 @@ const HeroSection = ({ project }: { project: ProjectCaseStudy }) => {
                 </span>
               ))}
             </div>
-          </div>
-
-          <div className="grid gap-3 sm:grid-cols-2">
-            {project.hero.links.map((link) => (
-              <CTAButton key={link.label} link={link} />
-            ))}
           </div>
         </div>
       </div>

@@ -3,7 +3,11 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { FaLocationArrow } from "react-icons/fa6";
+import {
+  FaLocationArrow,
+  FaChevronLeft,
+  FaChevronRight,
+} from "react-icons/fa6";
 
 import { projectCategories, projects } from "@/data";
 
@@ -131,7 +135,7 @@ const RecentProjects = () => {
                       </div>
 
                       <span className="inline-flex items-center gap-2 font-semibold text-purple">
-                        View case
+                        View More
                         <FaLocationArrow className="h-4 w-4 transition group-hover:translate-x-1" />
                       </span>
                     </div>
@@ -162,7 +166,7 @@ const RecentProjects = () => {
                     className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-white/5 text-white transition hover:border-white/50 hover:bg-white/10"
                     aria-label="Previous project"
                   >
-                    ←
+                    <FaChevronLeft className="h-4 w-4" />
                   </button>
                   <button
                     type="button"
@@ -178,7 +182,7 @@ const RecentProjects = () => {
                     className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-white/5 text-white transition hover:border-white/50 hover:bg-white/10"
                     aria-label="Next project"
                   >
-                    →
+                    <FaChevronRight className="h-4 w-4" />
                   </button>
                 </div>
               </div>

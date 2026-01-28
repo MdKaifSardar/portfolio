@@ -28,17 +28,17 @@ export const jeonftProject: ProjectCaseStudy = {
     ],
     links: [
       {
-        label: "Product walkthrough",
+        label: "Live site",
         href: "https://jeonftuser.vercel.app/",
         type: "primary",
         isExternal: true,
       },
-      {
-        label: "Architecture memo",
-        href: "https://jeonftuser.vercel.app/",
-        type: "secondary",
-        isExternal: true,
-      },
+      // {
+      //   label: "Architecture memo",
+      //   href: "https://jeonftuser.vercel.app/",
+      //   type: "secondary",
+      //   isExternal: true,
+      // },
     ],
   },
   features: [
@@ -145,27 +145,27 @@ export const jeonftProject: ProjectCaseStudy = {
     },
   ],
   documentation: [
-    {
-      title: "JEONFT platform playbook",
-      description:
-        "Architecture, routing model, and environment contracts for engineering handoffs.",
-      href: "https://docs.example.com/jeonft-playbook",
-      format: "Notion",
-    },
-    {
-      title: "Wallet & deposit runbook",
-      description:
-        "Operational guide covering admin wallet setup, 180-day locks, and payout approvals.",
-      href: "https://docs.example.com/jeonft-wallets",
-      format: "PDF",
-    },
-    {
-      title: "Support & compliance kit",
-      description:
-        "Templates for legal pages, contact flows, and user comms managed by CX leads.",
-      href: "https://docs.example.com/jeonft-compliance",
-      format: "Docs",
-    },
+    // {
+    //   title: "JEONFT platform playbook",
+    //   description:
+    //     "Architecture, routing model, and environment contracts for engineering handoffs.",
+    //   href: "https://docs.example.com/jeonft-playbook",
+    //   format: "Notion",
+    // },
+    // {
+    //   title: "Wallet & deposit runbook",
+    //   description:
+    //     "Operational guide covering admin wallet setup, 180-day locks, and payout approvals.",
+    //   href: "https://docs.example.com/jeonft-wallets",
+    //   format: "PDF",
+    // },
+    // {
+    //   title: "Support & compliance kit",
+    //   description:
+    //     "Templates for legal pages, contact flows, and user comms managed by CX leads.",
+    //   href: "https://docs.example.com/jeonft-compliance",
+    //   format: "Docs",
+    // },
   ],
   gallery: (jeonftImages.gallery ?? []).map(({ src, alt, caption }) => ({
     src,

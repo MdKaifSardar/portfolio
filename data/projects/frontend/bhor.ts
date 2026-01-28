@@ -28,17 +28,17 @@ export const bhorProject: ProjectCaseStudy = {
     ],
     links: [
       {
-        label: "Explore site",
+        label: "Live site",
         href: "https://bhor.vercel.app/",
         type: "primary",
         isExternal: true,
       },
-      {
-        label: "Design file",
-        href: "https://bhor.vercel.app/",
-        type: "secondary",
-        isExternal: true,
-      },
+      // {
+      //   label: "Design file",
+      //   href: "https://bhor.vercel.app/",
+      //   type: "secondary",
+      //   isExternal: true,
+      // },
     ],
   },
   features: [

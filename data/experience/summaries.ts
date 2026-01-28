@@ -7,7 +7,7 @@ export const experienceSummaries: ExperienceSummary[] = [
     role: "Full-stack Developer - Freelancer",
     company: "EduTouch",
     timeframe: "Dec 2024 – Feb 2025",
-    desc: "Scaled the App Router LMS, automation, and analytics stack that powers EduTouch's blended learning programs across three regions.",
+    desc: "Built and scaled EduTouch’s exam-prep platform, serving 3K+ learners on a unified system.",
     thumbnail: "/experience/freelance/EduTouch/image 1.PNG",
   },
   {

@@ -27,18 +27,18 @@ export const resumeBroProject: ProjectCaseStudy = {
       { label: "Latency savings", value: "-45% API calls" },
     ],
     links: [
-      {
-        label: "Product walkthrough",
-        href: "https://docs.example.com/resumebro-product",
-        type: "primary",
-        isExternal: true,
-      },
-      {
-        label: "Schema reference",
-        href: "https://docs.example.com/resumebro-schema",
-        type: "secondary",
-        isExternal: true,
-      },
+      // {
+      //   label: "Product walkthrough",
+      //   href: "https://docs.example.com/resumebro-product",
+      //   type: "primary",
+      //   isExternal: true,
+      // },
+      // {
+      //   label: "Schema reference",
+      //   href: "https://docs.example.com/resumebro-schema",
+      //   type: "secondary",
+      //   isExternal: true,
+      // },
     ],
   },
   features: [
@@ -138,13 +138,13 @@ export const resumeBroProject: ProjectCaseStudy = {
     },
   ],
   documentation: [
-    {
-      title: "Coming soon",
-      description:
-        "Developer docs + API references are being finalized during active development.",
-      href: "#",
-      format: "Work in progress",
-    },
+    // {
+    //   title: "Coming soon",
+    //   description:
+    //     "Developer docs + API references are being finalized during active development.",
+    //   href: "#",
+    //   format: "Work in progress",
+    // },
   ],
   gallery: (resumeBroImages.gallery ?? []).map(({ src, alt, caption }) => ({
     src,

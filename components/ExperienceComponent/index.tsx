@@ -9,6 +9,8 @@ import MilestoneTimeline from "./_components/MilestoneTimeline";
 import ResponsibilityGrid from "./_components/ResponsibilityGrid";
 import SectionShell from "./_components/SectionShell";
 
+import TechStack from "./_components/TechStack";
+
 interface ExperienceDetailProps {
   experience: ExperienceCaseStudy;
 }
@@ -17,6 +19,16 @@ const ExperienceDetail = ({ experience }: ExperienceDetailProps) => {
   return (
     <div className="space-y-16 lg:space-y-20">
       <HeroSection experience={experience} />
+
+      {experience.hero.badges.length > 0 && (
+        <SectionShell
+          eyebrow="Core technologies"
+          title="Tech Stack"
+          description="The tools, frameworks, and infrastructure used to deliver this solution."
+        >
+          <TechStack badges={experience.hero.badges} />
+        </SectionShell>
+      )}
 
       {experience.gallery.length > 0 && (
         <SectionShell

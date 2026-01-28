@@ -9,96 +9,104 @@ export const eduTouchExperience: ExperienceCaseStudy = {
   location: "Remote • Kolkata, IN",
   timeframe: "Dec 2024 – Feb 2025",
   excerpt:
-    "Scaled EduTouch's exam-readiness platform end-to-end—marketing funnel, learning console, secure admin suite, and download-ready study assets—so 18K learners stay guided without ops bottlenecks.",
+    "Built and scaled EduTouch’s exam-prep platform, serving 3K+ learners on a unified system.",
   summary:
-    "Partnered with academics, CX, and engineering to stand up the App Router stack, automate content workflows, and ship analytics surfaces that keep every cohort measurable and compliant.",
+    "Built and scaled EduTouch’s exam-prep platform, serving 3K+ learners on a unified system.",
   card: {
     thumbnail: eduTouchImages.thumbnail,
   },
   hero: {
-    headline:
-      "Unified EduTouch's classroom, marketing, and admin layers on a single Next.js 15 platform",
+    headline: "LMS platfrom for EduTouch coaching institution.",
     heroImage: eduTouchImages.hero,
-    badges: ["Next.js 15 App Router", "MongoDB + Mongoose", "Cloudinary"],
+    badges: [
+      "Next.js 15",
+      "TypeScript",
+      "Tailwind CSS",
+      "SCSS",
+      "API Routes",
+      "MongoDB",
+      "Mongoose",
+      "Cloudinary",
+    ],
     stats: [
-      { label: "Active learners", value: "18K", helper: "3 regions" },
+      { label: "Active learners", value: "3K", helper: "2 regions" },
       { label: "Content assets automated", value: "1.4K+/mo" },
       { label: "Admin uptime", value: "99.96%" },
     ],
   },
   focusAreas: [
     {
-      title: "Unified experience layers",
+      title: "Scalable LMS Architecture",
       description:
-        "Connected the global shell, hero funnel, downloads CTA, notices, and standalone routes so home, marketing, and protected admin paths feel consistent and share copy decks.",
-      icon: "📚",
-      tags: ["LMS", "Experience"],
+        "Engineered a comprehensive learning platform handling exams, enrollments, and media-rich modules for General Knowledge/Current Affairs, supporting high-concurrency usage.",
+      icon: "🏗️",
+      tags: ["System Design", "Scalability"],
     },
     {
-      title: "Workflow automation",
+      title: "Secure Admin Suite",
       description:
-        "Reinforced teacher/admin flows with hooks for notices, courses, exams, GK/CA drops, and hero posters so publishing, grading, and downloads travel through audited server routes.",
-      icon: "⚙️",
-      tags: ["Server actions", "Automation"],
+        "Developed a role-based dashboard with robust authentication, giving faculty and admins granular control over content, user management, and operational CRUD workflows.",
+      icon: "🛡️",
+      tags: ["Auth", "Dashboard"],
     },
     {
-      title: "Data governance & insights",
+      title: "Cloud Native Asset Management",
       description:
-        "Modeled Mongo collections, surfaced analytics dashboards, and backed them with CSV/API exports so academic ops can trust every compliance packet.",
-      icon: "📊",
-      tags: ["Analytics", "Data"],
+        "Migrated media storage to Cloudinary, implementing optimized fetch patterns that reduced page load latency by ~40% and cut API overhead by ~25%.",
+      icon: "☁️",
+      tags: ["Performance", "Cloudinary"],
     },
   ],
   responsibilities: [
     {
-      title: "Product & delivery",
+      title: "Full-Stack Development",
       description:
-        "Ran discovery through launch for every module, keeping RFCs, feature flags, and adoption reviews tight with academic ops.",
+        "Led the end-to-end build of the platform using Next.js, managing both the student-facing LMS and the internal admin console.",
       bullets: [
-        "Facilitated roadmap reviews covering hero carousel, notices, exams, and admin flows",
-        "Instrumented release health with request logging + UX telemetry",
-        "Closed launches with postmortems and adoption scorecards",
+        "Architected the database schema for courses, exams, and user progress",
+        "Implemented secure exam taking interfaces with anti-cheat measures",
+        "Built responsive, accessible UI components for diverse learner demographics",
       ],
     },
     {
-      title: "Architecture & platform ops",
+      title: "Platform Security & Ops",
       description:
-        "Owned the App Router architecture, Mongo schemas, JWT middleware, and Cloudinary lifecycle so auth, storage, and downloads stay reliable.",
+        "Ensured data integrity and restricted access through custom middleware and secure API routes.",
       bullets: [
-        "Hardened JWT middleware and Cloudinary upload/delete helpers",
-        "Optimized Mongo queries + indexes for hooks powering courses/exams",
-        "Maintained environment matrices + incident playbooks",
+        "Implemented role-based access control (RBAC) for admins and sub-admins",
+        "Secured API endpoints against unauthorized access and payload injection",
+        "Automated backups and health checks for critical exam services",
       ],
     },
     {
-      title: "Stakeholder enablement",
+      title: "Performance Optimization",
       description:
-        "Equipped instructors, CX, and support with self-serve tooling, structured documentation, and Loom walkthroughs across every launch.",
+        "Refined the data layer and asset delivery network to ensure smooth performance even on low-bandwidth connections.",
       bullets: [
-        "Published update guides for hero posters, notices, and YouTube drops",
-        "Maintained shared backlog + intake for CX + curriculum teams",
-        "Hosted quarterly retros with partner schools and ops leads",
+        "Optimized database queries and implemented server-side caching",
+        "Integrated Cloudinary for auto-format and auto-quality image delivery",
+        "Reduced bundle size through dynamic imports and code splitting",
       ],
     },
   ],
   achievements: [
     {
-      title: "Activation",
-      value: "82% week-one",
+      title: "Performance gain",
+      value: "40% faster",
       description:
-        "Instructor enablement kits + notice automation kept most classrooms live within seven days.",
+        "Migration to Cloudinary and optimized fetch patterns significantly improved load times.",
     },
     {
-      title: "Support deflection",
-      value: "-45% tickets",
+      title: "API efficiency",
+      value: "-25% overhead",
       description:
-        "Server-routed content updates plus WhatsApp-triggered FAQs cut duplicate CX requests.",
+        "Refactored data fetching and caching strategies reduced server load and API calls.",
     },
     {
-      title: "Reporting accuracy",
-      value: "99.3%",
+      title: "User stability",
+      value: "3K+ learners",
       description:
-        "Centralized analytics and CSV/API exports replaced spreadsheet stitching for compliance.",
+        "Platform successfully supports a growing active user base with consistent uptime.",
     },
   ],
   milestones: [
@@ -129,27 +137,27 @@ export const eduTouchExperience: ExperienceCaseStudy = {
     },
   ],
   documentation: [
-    {
-      title: "Architecture & tech stack overview",
-      description:
-        "Summarizes App Router composition, Mongo models, and Cloudinary contracts for auditors.",
-      href: "https://docs.example.com/edutouch-tech",
-      format: "Notion",
-    },
-    {
-      title: "Experience layers handbook",
-      description:
-        "Explains global shell, home funnel, standalone routes, and comms widgets for marketing + CX.",
-      href: "https://docs.example.com/edutouch-experience",
-      format: "PDF",
-    },
-    {
-      title: "Operational runbook",
-      description:
-        "Environment matrices, `/api/*` dependencies, and downtime comms flows for ops + CX.",
-      href: "https://docs.example.com/edutouch-ops",
-      format: "Docs",
-    },
+    // {
+    //   title: "Architecture & tech stack overview",
+    //   description:
+    //     "Summarizes App Router composition, Mongo models, and Cloudinary contracts for auditors.",
+    //   href: "https://docs.example.com/edutouch-tech",
+    //   format: "Notion",
+    // },
+    // {
+    //   title: "Experience layers handbook",
+    //   description:
+    //     "Explains global shell, home funnel, standalone routes, and comms widgets for marketing + CX.",
+    //   href: "https://docs.example.com/edutouch-experience",
+    //   format: "PDF",
+    // },
+    // {
+    //   title: "Operational runbook",
+    //   description:
+    //     "Environment matrices, `/api/*` dependencies, and downtime comms flows for ops + CX.",
+    //   href: "https://docs.example.com/edutouch-ops",
+    //   format: "Docs",
+    // },
   ],
   links: [
     {
