@@ -5,6 +5,7 @@ import { achievementHighlights, certificationHighlights } from "./achievements";
 export const navItems = [
   { name: "About", link: "/#about" },
   { name: "Projects", link: "/#projects" },
+  { name: "Achievements", link: "/#achievements" },
   { name: "Experience", link: "/#experience" },
   { name: "Contact", link: "/#contact" },
 ];

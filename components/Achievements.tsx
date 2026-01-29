@@ -144,16 +144,16 @@ const Achievements = () => {
     }, 120);
   }, [activeCertification]);
   return (
-    <div className="py-20 w-full">
+    <div id="achievements" className="py-20 w-full">
       <h1 className="heading mb-12">
-        Career <span className="text-purple">milestones & credentials</span>
+        <span className="text-purple">Achievements</span>
       </h1>
 
       {/* Measurements Section */}
       {/* Measurements Section */}
-      <section className="mb-20">
+      <section className="mb-10 md:mb-20">
         <div className="flex items-center justify-between mb-8">
-          <h2 className="text-lg font-semibold uppercase tracking-widest text-white/50 text-center md:text-left">
+          <h2 className="text-sm font-semibold uppercase tracking-widest text-white/50 text-center md:text-left">
             Impact Measurements
           </h2>
           {/* Mobile Nav for Measurements */}
@@ -227,7 +227,7 @@ const Achievements = () => {
       {/* Certifications Section */}
       <section>
         <div className="flex items-center justify-between mb-8">
-          <h2 className="text-lg font-semibold uppercase tracking-widest text-white/50">
+          <h2 className="text-sm font-semibold uppercase tracking-widest text-white/50">
             Certifications
           </h2>
           <div className="flex gap-2">

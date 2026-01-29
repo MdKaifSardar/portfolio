@@ -7,13 +7,13 @@ import HeroImage from "./hero/HeroImage";
 import HeroServices from "./hero/HeroServices";
 
 const HeroSection = () => {
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(true);
 
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 1024);
     };
-    checkMobile();
+    checkMobile(); // Check immediately on mount/hydrate
     window.addEventListener("resize", checkMobile);
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
@@ -34,7 +34,7 @@ const HeroSection = () => {
   const delays = isMobile ? mobileDelays : desktopDelays;
 
   return (
-    <section className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-white dark:bg-black-100 lg:h-[110vh]">
+    <section className="relative flex min-h-[100dvh] w-full flex-col items-center justify-center overflow-hidden bg-white dark:bg-black-100 lg:h-[110vh]">
       {/* Background Effects */}
       <div className="absolute inset-0 h-full w-full">
         <Spotlight
@@ -53,7 +53,10 @@ const HeroSection = () => {
         </div>
       </div>
 
-      <div className="relative z-10 grid w-full max-w-[1400px] grid-cols-2 gap-4 px-4 pt-24 md:px-10 md:pt-32 lg:grid-cols-12 lg:gap-0 lg:pt-0">
+      <div
+        key={isMobile ? "mobile-layout" : "desktop-layout"}
+        className="relative z-10 grid w-full max-w-[1400px] grid-cols-2 gap-4 px-4 pt-14 md:px-10 md:pt-32 lg:grid-cols-12 lg:gap-0 lg:pt-0"
+      >
         <div className="col-span-2 order-3 lg:col-span-5 lg:order-1">
           <HeroText delay={delays.text} />
         </div>
